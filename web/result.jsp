@@ -1,17 +1,61 @@
-<%-- 
-    Document   : result
-    Created on : Feb 26, 2018, 2:41:37 PM
-    Author     : hshi
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>result</title>
+        <link rel="stylesheet" type="text/css" href="hanstyle.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Salary Info</h1>
+        
+        <table>
+            <tr>
+                <td>Total Hours Worked:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Hourly Rate:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td># Hours Overtime:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Overtime Hourly Rate:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Gross Pay:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Pre-tax Deduct:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Pre-tax Pay:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Post-tax Deduct:</td>
+                <td></td>
+            </tr>
+            
+            <tr>
+                <td>Net Pay:</td>
+                <td></td>
+            </tr>
+            
+        </table>
     </body>
 </html>
