@@ -1,0 +1,14 @@
+body {background:lightblue;}
+
+h1 {}
+
+label{
+    
+    width:6em;
+    margin-botton:0.5em}
+
+.tbox {font-style: italic;
+       margin-left: 0.5em;}
+
+#submit {color:black;}
+#clear {color:black;}
