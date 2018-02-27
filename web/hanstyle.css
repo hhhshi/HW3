@@ -1,14 +1,42 @@
-body {background:lightblue;}
+body {background:darkolivegreen; color:white;}
 
-h1 {}
+h1 {font-family: calibri; font-size: 30px}
 
-label{
-    
-    width:6em;
-    margin-botton:0.5em}
-
-.tbox {font-style: italic;
+.tbox {
+       font-style: italic;
        margin-left: 0.5em;}
 
-#submit {color:black;}
-#clear {color:black;}
+
+.input{
+    border-color: darkolivegreen;
+}
+
+#submit {color:black; font-size:14px;}
+#clear {color:black; font-size:14px;}
+
+#table{
+    background-color: white;
+    color: black;
+    boder: 1px;
+    width: 250px;
+}
+
+#result{
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+}
+
+tr,td{border: 1px solid;
+      border-color: darkgray;
+}
+
+.col1{
+    width: 170px;
+    text-align: right;
+}
+
+#netpay {
+    background: lightgoldenrodyellow;
+    font-weight: bold;
+}

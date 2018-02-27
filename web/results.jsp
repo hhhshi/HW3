@@ -30,8 +30,8 @@
           
           double taxAmount;
           if(grossPay < 500)
-            {taxAmount = grossPay * 0.18;}
-          else {taxAmount = grossPay * 0.22;}
+            {taxAmount = pretaxpay * 0.18;}
+          else {taxAmount = pretaxpay * 0.22;}
           
           double postaxpay = pretaxpay - taxAmount;          
           double postdeduct = Double.parseDouble(request.getParameter("posttax"));
@@ -39,67 +39,69 @@
         %>
     
     <body>
-        <h1>Salary Info</h1>
+        <h1>Salary Information</h1>
         
-        <table border="1">
+        <div id="table">
+        <table id="result">
             <tbody>
             <tr>
-                <td>Total Hours Worked:</td>
+                <td class="col1">Total Hours Worked:</td>
                 <td><%= hoursWorked %></td>
             </tr>
             
             <tr>
-                <td>Hourly Rate:</td>
+                <td class="col1">Hourly Rate:</td>
                 <td><%= payRate %></td>
             </tr>
                 
             <tr>
-                <td># Hours Overtime:</td>
+                <td class="col1"># Hours Overtime:</td>
                 <td><%= otHour %></td>
             </tr>
             
             <tr>
-                <td>Overtime Hourly Rate:</td>
+                <td class="col1">Overtime Hourly Rate:</td>
                 <td><%= otPayRate %></td>
             </tr>
             
             <tr>
-                <td>Gross Pay:</td>
+                <td class="col1">Gross Pay:</td>
                 <td><%= grossPay %></td>
             </tr>
             
             <tr>
-                <td>Pre-tax Deduct:</td>
+                <td class="col1">Pre-tax Deduct:</td>
                 <td><%= prededuct %></td>
             </tr>
             
             <tr>
-                <td>Pre-tax Pay:</td>
+                <td class="col1">Pre-tax Pay:</td>
                 <td><%= pretaxpay %></td>
             </tr>
             
             <tr>
-                <td>Tax Amount:</td>
+                <td class="col1">Tax Amount:</td>
                 <td><%= taxAmount %></td>
             </tr>
             
             <tr>
-                <td>Post-tax Pay</td>
+                <td class="col1">Post-tax Pay</td>
                 <td><%= postaxpay %></td>
             </tr>
             
             <tr>
-                <td>Post-tax Deduct:</td>
+                <td class="col1">Post-tax Deduct:</td>
                 <td><%= postdeduct %></td>
             </tr>
             
             <tr>
-                <td>Net Pay:</td>
-                <td><%= netpay %></td>
+                <td class="col1">Net Pay:</td>
+                <td id="netpay"><%= netpay %></td>
             </tr>
             
            
             </tbody>
         </table>
+        </div>
     </body>
 </html>
