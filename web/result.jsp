@@ -4,59 +4,68 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>result</title>
         <link rel="stylesheet" type="text/css" href="hanstyle.css">
+        <title>result</title>       
     </head>
         <%
-          int hours = Integer.parseInt(request.getParameter("hrwork"));
-          double hrpay = Double.parseDouble(request.getParameter("hrpay"));
+          int hoursWorked = Integer.parseInt(request.getParameter("hrwork"));
+          double payRate = Double.parseDouble(request.getParameter("hrpay"));
           
-          int overtime = 40 - hours;
-          double overpay = 1.5 * hrpay;
-          
-          double grosspay = hours*hrpay + overtime*overpay;
+          int otHour = hoursWorked - 40;
+          double otPayRate = 1.5 * payRate;
+          double otPay;
+          double regularPay;
+          double grossPay;
+          if(hoursWorked > 40) 
+                 {
+                  otPay = otPayRate * otHour;
+                  regularPay = 40 * payRate;
+                  grossPay = regularPay + otPay;
+                 }
+          else {
+            grossPay = hoursWorked * payRate;}
           
           double prededuct = Double.parseDouble(request.getParameter("pretax"));
-          double pretaxpay = grosspay - prededuct;
+          double pretaxpay = grossPay - prededuct;
           
-          double tax;
-          if(grosspay < 500)
-            {tax = grosspay * 0.18;}
-          else {tax = grosspay * 0.22;}
+          double taxAmount;
+          if(grossPay < 500)
+            {taxAmount = grossPay * 0.18;}
+          else {taxAmount = grossPay * 0.22;}
           
-          double postaxpay = pretaxpay - tax;
+          double postaxpay = pretaxpay - taxAmount;          
           double postdeduct = Double.parseDouble(request.getParameter("posttax"));
           double netpay = postaxpay - postdeduct;
-          
         %>
     
     <body>
         <h1>Salary Info</h1>
         
-        <table>
+        <table border="1">
+            <tbody>
             <tr>
                 <td>Total Hours Worked:</td>
-                <td><%= hours %></td>
+                <td><%= hoursWorked %></td>
             </tr>
             
             <tr>
                 <td>Hourly Rate:</td>
-                <td><%= hrpay %></td>
+                <td><%= payRate %></td>
             </tr>
-            
+                
             <tr>
                 <td># Hours Overtime:</td>
-                <td><%= overtime %></td>
+                <td><%= otHour %></td>
             </tr>
             
             <tr>
                 <td>Overtime Hourly Rate:</td>
-                <td><%= overpay %></td>
+                <td><%= otPayRate %></td>
             </tr>
             
             <tr>
                 <td>Gross Pay:</td>
-                <td><%= grosspay %></td>
+                <td><%= grossPay %></td>
             </tr>
             
             <tr>
@@ -71,7 +80,7 @@
             
             <tr>
                 <td>Tax Amount:</td>
-                <td><%= tax %></td>
+                <td><%= taxAmount %></td>
             </tr>
             
             <tr>
@@ -89,6 +98,8 @@
                 <td><%= netpay %></td>
             </tr>
             
+           
+            </tbody>
         </table>
     </body>
 </html>

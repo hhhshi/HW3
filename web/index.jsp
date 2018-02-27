@@ -11,21 +11,33 @@
         <h1>Simple Salary Calculator </h1>
         
         <form name="demoForm" action="results.jsp" method="post">
-            <label>Hours Worked:</label><input class="tbox" type="text" name="hrwork" value="" size="50">
-            
-            <br>
-            <label>Hourly Pay:</label><input class="tbox" type="text" name="hrpay" value="" size="50">
-            
-            <br>
-            <label>Pre-tax Deduct:</label><input class="tbox" type="text" name="pretax" value="" size="50">
-            
-            <br>
-            <label>Post-tax Deduct:</label><input class="tbox" type="text" name="posttax" value="" size="50">
-            
-            <br> 
-            <label> </label>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Hours Worked:</td>
+                        <td><input class="tbox" type="text" name="hrwork" value="" size="50"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Hourly Pay:</td>
+                        <td><input class="tbox" type="text" name="hrpay" value="" size="50"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Pre-tax Deduct:</td>
+                        <td><input class="tbox" type="text" name="pretax" value="" size="50"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Post-tax Deduct:</td>
+                        <td><input class="tbox" type="text" name="posttax" value="" size="50"></td>
+                    </tr>
+                </tbody>
+            </table>
+
                  <input type="reset" value="Clear" id="clear">
                  <input type="submit" value="Submit" id="submit">
+            
         </form>
     </body>
 </html>
